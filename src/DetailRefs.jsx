@@ -8,7 +8,6 @@ export default function Detail(props) {
   const { id } = useParams();
   const skuRef = useRef();
   const navigate = useNavigate();
-
   const { data: product, loading, error } = useFetch(`products/${id}`);
 
   if (loading) return <Spinner />;
@@ -20,6 +19,7 @@ export default function Detail(props) {
       <h1>{product.name}</h1>
       <p>{product.description}</p>
       <p id="price">${product.price}</p>
+
       <select id="size" ref={skuRef}>
         <option value="">What size?</option>
         {product.skus.map((s) => (
@@ -28,17 +28,18 @@ export default function Detail(props) {
           </option>
         ))}
       </select>
+
       <p>
         <button
           className="btn btn-primary"
           onClick={() => {
             const sku = skuRef.current.value;
-            if (!sku) return alert("Please select a size");
+            if (!sku) return alert("Select size.");
             props.addToCart(id, sku);
             navigate("/cart");
           }}
         >
-          Add to Cart
+          Add to cart
         </button>
       </p>
       <img src={`/images/${product.image}`} alt={product.category} />

@@ -4,7 +4,7 @@ import { useCart } from "./cartContext";
 
 const STATUS = {
   IDLE: "IDLE",
-  SUBMIT: "SUBMITTED",
+  SUBMITTED: "SUBMITTED",
   SUBMITTING: "SUBMITTING",
   COMPLETED: "COMPLETED",
 };
@@ -22,11 +22,12 @@ export default function Checkout() {
   const [saveError, setSaveError] = useState(null);
   const [touched, setTouched] = useState({});
 
-  // Derived State
+  // Derived state
   const errors = getErrors(address);
   const isValid = Object.keys(errors).length === 0;
+
   function handleChange(e) {
-    e.persist();
+    e.persist(); // persist the event
     setAddress((curAddress) => {
       return {
         ...curAddress,
@@ -67,8 +68,9 @@ export default function Checkout() {
 
   if (saveError) throw saveError;
   if (status === STATUS.COMPLETED) {
-    return <h1>Thank you for your order!</h1>;
+    return <h1>Thanks for shopping!</h1>;
   }
+
   return (
     <>
       <h1>Shipping Info</h1>

@@ -66,39 +66,9 @@
       "country": ""
     },
     {
-      "city": "2134",
-      "country": "",
-      "id": 2
-    },
-    {
-      "city": "213123",
-      "country": "",
-      "id": 3
-    },
-    {
-      "city": "12312",
-      "country": "",
-      "id": 4
-    },
-    {
-      "city": "213213",
-      "country": "",
-      "id": 5
-    },
-    {
       "city": "123123",
-      "country": "",
-      "id": 6
-    },
-    {
-      "city": "dsg",
-      "country": "China",
-      "id": 7
-    },
-    {
-      "city": "123",
-      "country": "China",
-      "id": 8
+      "country": "India",
+      "id": 2
     }
   ]
 }
